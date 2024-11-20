@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        // Day1.FirstNon_RepeatingCharacter("uyhfubyvh"); // f
+        // Day1.IsPalindrome("madam"); // true
+        // Day2.LongestCommonPrefix(["hello", "hell", "heaven", "help"]); // he
     }
 }
