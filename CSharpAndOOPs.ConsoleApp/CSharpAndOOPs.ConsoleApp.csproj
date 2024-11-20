@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <Folder Include="AdvancedCSharp\" />
-    <Folder Include="BasicCShrap\" />
+    <Folder Include="BasicCSharp\" />
     <Folder Include="OOPs\" />
   </ItemGroup>
 
