@@ -113,6 +113,5 @@ public class Day1
           Console.WriteLine($"Given string: {input} is not a Palindrome");
         }
         #endregion
-
     }
 }
