@@ -1,6 +1,6 @@
 using System;
 
-namespace CodingProblems.ConsoleApp.Day4;
+namespace CodingProblems.ConsoleApp;
 
 public class Day4
 {
@@ -10,7 +10,7 @@ public class Day4
         // Space Complexity : O(1)
 
         int n = arr.Length; 
-        
+        bool found = false;
         for (int i = 0; i < n; i++) {
             int count = 0;
 
@@ -22,10 +22,11 @@ public class Day4
 
             if (count > n / 2) {
                 Console.WriteLine("Majority Element : "+arr[i]);
-                return;
+                found = true;
+                break;
             }
         }
-        Console.WriteLine("No Majority Element");
+        if(!found) Console.WriteLine("No Majority Element found");
 
         #endregion
 
@@ -33,9 +34,10 @@ public class Day4
         // Time Complexity  : O(N log N)
         // Space Complexity : O(1)
         
+        found = false;
         if (n == 1){
             Console.WriteLine("Majority Element : "+arr[0]);
-            return;
+            found = true;
         }
 
         int cnt = 1;
@@ -47,27 +49,27 @@ public class Day4
             } else {
                 if (cnt > n / 2) {
                     Console.WriteLine("Majority Element : "+arr[i-1]);
-                    return;
+                    found = true;
+                    break;
                 }
                 cnt = 1;
             }
+            if(found) break;
         }
 
-        if (cnt > n / 2) {
+        if (cnt > n / 2 && !found) {
             Console.WriteLine("Majority Element : "+arr[n-1]);
-            return;
+            found = true;
         }
 
-        Console.WriteLine("No majority element found");
-    
-
+        if(!found) Console.WriteLine("No majority element found");
         #endregion
-
 
         #region Using Dictionary
         // Time Complexity  : O(N)
         // Space Complexity : O(N)
 
+        found = false;
         Dictionary<int, int> countMap = new Dictionary<int, int>();
 
         foreach (int num in arr) {
@@ -78,11 +80,12 @@ public class Day4
 
             if (countMap[num] > n / 2) {
                 Console.WriteLine("Majority Element : "+num);
-                return;
+                found = true;
+                break;
             }
         }
 
-        Console.WriteLine("No majority element found ");
+        if(!found) Console.WriteLine("No majority element found ");
         #endregion
 
         #region Moore's Voting Algorithm
