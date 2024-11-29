@@ -11,7 +11,7 @@ public class Day5
 
         int n = arr.Length;
         Array.Sort(arr);
-        // Swap adjacent elements
+     
         for (int i = 0; i < n - 1; i += 2){
             Swap(arr, i, i + 1);
         }
